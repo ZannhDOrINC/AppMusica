@@ -33,6 +33,11 @@ else
                 <input class="form-control form-control-sm" asp-for="oAlbum.anioLanzamiento" type="number" />
             </div>
 
+            <div class="mb-2">
+                <label class="form-label" asp-for="oAlbum.anioLanzamiento"># de Canciones</label>
+                <input class="form-control form-control-sm" asp-for="oAlbum.anioLanzamiento" type="number" />
+            </div>
+
             <div class="mb-3">
                 <label class="form-label" asp-for="oAlbum.IdGenero">Género Musical</label>
                 <select class="form-label" asp-for="oAlbum.IdGenero" asp-items="@Model.oListaGenero">
