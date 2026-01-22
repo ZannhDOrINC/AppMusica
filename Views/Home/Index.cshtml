@@ -1,0 +1,46 @@
+﻿@model List<AppMusicaV1.Models.Albumes>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido</h1>
+    <p>Página hecha con Entity Framework y .NET Core 8</p>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Lista de Albumes Registrados</h5>
+    </div>
+    <div class="card-body">
+        <a class="btn btn-success btn-sm" asp-action="Album_Detalle" asp-controller="Home" asp-route-idAlbum="0">Registrar Nuevo</a>
+        <hr />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Artista</th>
+                    <th>Título Álbum</th>
+                    <th>Género Musical</th>
+                    <th>Año Lanzamiento</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.NombreArtista</td>
+                        <td>@item.Titulo</td>
+                        <td>@item.oGeneroMusical.Nombre</td>
+                        <td>@item.anioLanzamiento</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Album_Detalle" asp-controller="Home" asp-route-idAlbum="@item.IdAlbum"> Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar_Album" asp-controller="Home" asp-route-idAlbum="@item.IdAlbum"> Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

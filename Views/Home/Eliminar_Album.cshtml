@@ -1,0 +1,41 @@
+﻿@model AppMusicaV1.Models.Albumes
+@{
+    ViewData["Title"] = "Eliminar_Album";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">¿Está seguro de eliminar el Álbum?</h3>
+<hr />
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Eliminar_Album" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="IdAlbum" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="NombreArtista">Artista</label>
+                <input class="form-control form-control-sm" asp-for="NombreArtista" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Titulo">Título del Álbum</label>
+                <input class="form-control form-control-sm" asp-for="Titulo" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="anioLanzamiento">Año en que se lanzó</label>
+                <input class="form-control form-control-sm" asp-for="anioLanzamiento" type="number" disabled />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="IdGenero">Género Musical</label>
+                <input class="form-control form-control-sm" asp-for="oGeneroMusical.Nombre" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <button class="btn btn-danger btn-sm w-25" type="submit">Elminar</button>
+                <a class="btn btn-dark btn-sm" asp-action="Index" asp-controller="Home">Volver</a>
+            </div>
+
+        </form>
+    </div>
+</div>
